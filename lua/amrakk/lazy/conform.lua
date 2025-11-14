@@ -9,7 +9,7 @@ return {
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				go = { "gofumt" },
+				go = { "gofumpt" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 			},
@@ -20,4 +20,3 @@ return {
 		end)
 	end,
 }
-
