@@ -6,7 +6,15 @@ return {
 	},
 
 	config = function()
-		require("telescope").setup({})
+		require("telescope").setup({
+			defaults = {
+				hidden = true,
+				file_ignore_patterns = {
+					".git/",
+					"node_modules/",
+				},
+			},
+		})
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>pf", function()
