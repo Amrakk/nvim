@@ -43,6 +43,13 @@ autocmd("BufEnter", {
 		else
 			pcall(vim.cmd.colorscheme, "rose-pine-moon")
 		end
+
+        pcall(function()
+            local ok, lualine_module = pcall(require, "amrakk.lazy.lualine")
+            if ok and type(lualine_module.config) == "function" then
+                lualine_module.config()
+            end
+        end)
 	end,
 })
 

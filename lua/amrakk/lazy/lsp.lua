@@ -32,7 +32,7 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
-                "typescript-language-server",
+                "ts_ls",
 				"gopls",
 				"tailwindcss",
 			},
