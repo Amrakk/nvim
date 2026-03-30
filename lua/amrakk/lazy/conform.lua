@@ -12,6 +12,7 @@ return {
 				go = { "gofumpt" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
+                java = { "google-java-format" },
 			},
 		})
 

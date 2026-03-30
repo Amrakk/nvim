@@ -95,6 +95,36 @@ return {
 						},
 					})
 				end,
+                ["gopls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.gopls.setup({
+                        capabilities = capabilities,
+                        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+                        cmd = { "gopls" },
+                        settings = {
+                            gopls = {
+                                analyses = {
+                                    unusedparams = true,
+                                    nilness = true,
+                                    shadow = true,
+                                    unusedwrite = true,
+                                },
+                                staticcheck = true,
+                                gofumpt = true,
+
+                                completeUnimported = true,
+                            },
+                        },
+                    })
+                end,
+                ["java"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.jdtls.setup({
+                        capabilities = capabilities,
+                        filetypes = { "java" },
+                        cmd = { "jdtls" }
+                    })
+                end,
 			},
 		})
 
